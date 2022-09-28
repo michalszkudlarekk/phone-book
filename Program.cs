@@ -29,6 +29,10 @@
                     break;
 
                 case "2":
+                    Console.WriteLine("Insert number");
+                    var numbertoSearch = Console.ReadLine();
+
+                    phoneBook.DisplayContact(numbertoSearch);
                     break;
 
                 case "3":
