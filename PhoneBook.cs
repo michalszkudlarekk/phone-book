@@ -12,13 +12,12 @@
         private void DisplayContactDetails(Contact contact)
         {
             Console.WriteLine($"Contact : {contact.FullName}, {contact.Number}");
-
         }
 
         private void DisplayContactsDetails(List<Contact> contacts)
         {
-            foreach( var contact in contacts)   
-            DisplayContactDetails(contact);
+            foreach (var contact in contacts)
+                DisplayContactDetails(contact);
         }
 
         public void DisplayContact(string number)
@@ -34,18 +33,15 @@
             }
         }
 
-
         public void DisplayAllContacts()
         {
             DisplayContactsDetails(Contacts);
         }
 
-
         public void DisplayMatchingContacts(string searchPhrase)
         {
             var matchingContacts = Contacts.Where(c => c.FullName.Contains(searchPhrase)).ToList();
-           DisplayContactsDetails(matchingContacts);    
-
+            DisplayContactsDetails(matchingContacts);
         }
     }
 }

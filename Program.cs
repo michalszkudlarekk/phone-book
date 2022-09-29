@@ -6,12 +6,14 @@
         {
             Console.WriteLine("Hello from the other sideeeee");
 
-            Console.WriteLine("1 Add Contact");
-            Console.WriteLine("2 Display contact by number");
-            Console.WriteLine("3 Display all contacts");
-            Console.WriteLine("4 Search contacts");
-            Console.WriteLine("'x' to exit the PhoneBook");
-
+            Console.WriteLine("1 - add contact");
+            Console.WriteLine("2 - display contact by number");
+            Console.WriteLine("3 - display all contacts");
+            Console.WriteLine("4 - search contact by phrase");
+            Console.WriteLine("x - exit phonebook");
+            // TODO
+            // nazwa co najmniej 3 litery, a numer ma mieć 9 
+            // usuwanie kontaktow bazujac na numerze
             var userInput = Console.ReadLine();
             var phoneBook = new PhoneBook();
 
