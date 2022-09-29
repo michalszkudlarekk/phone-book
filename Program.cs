@@ -10,40 +10,53 @@
             Console.WriteLine("2 Display contact by number");
             Console.WriteLine("3 Display all contacts");
             Console.WriteLine("4 Search contacts");
+            Console.WriteLine("'x' to exit the PhoneBook");
 
             var userInput = Console.ReadLine();
+            var phoneBook = new PhoneBook();
 
-
-            var phoneBook = new PhoneBook();    
-            switch (userInput)
+            while (true)
             {
-                case "1":
+                switch (userInput)
+                {
+                    case "1":
 
-                    Console.WriteLine("Insert number");
-                    var number = Console.ReadLine();
-                    Console.WriteLine("Insert name");
-                    var fullName = Console.ReadLine();
+                        Console.WriteLine("Insert number");
+                        var number = Console.ReadLine();
+                        Console.WriteLine("Insert name");
+                        var fullName = Console.ReadLine();
 
-                    var newContact = new Contact(fullName, number);
-                    phoneBook.AddContact(newContact);
-                    break;
+                        var newContact = new Contact(fullName, number);
+                        phoneBook.AddContact(newContact);
+                        break;
 
-                case "2":
-                    Console.WriteLine("Insert number");
-                    var numbertoSearch = Console.ReadLine();
+                    case "2":
+                        Console.WriteLine("Insert number");
+                        var numbertoSearch = Console.ReadLine();
+                        phoneBook.DisplayContact(numbertoSearch);
+                        break;
 
-                    phoneBook.DisplayContact(numbertoSearch);
-                    break;
+                    case "3":
+                        phoneBook.DisplayAllContacts();
+                        break;
 
-                case "3":
-                    break;
+                    case "4":
 
-                case "4":
-                    break;
+                        Console.WriteLine("Insert search phrase");
+                        var searchPhrase = Console.ReadLine();
 
-                default:
-                    Console.Write("Invalid operation");
-                    break;
+                        phoneBook.DisplayMatchingContacts(searchPhrase);
+                        break;
+
+                    case "x":
+                        return;
+
+                    default:
+                        Console.Write("Invalid operation");
+                        break;
+                }
+                Console.WriteLine("Select operation");
+                userInput = Console.ReadLine();
             }
         }
     }
