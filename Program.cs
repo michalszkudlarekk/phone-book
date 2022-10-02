@@ -10,6 +10,7 @@
             Console.WriteLine("2 - display contact by number");
             Console.WriteLine("3 - display all contacts");
             Console.WriteLine("4 - search contact by phrase");
+            Console.WriteLine("5 - Delete contact based on number");
             Console.WriteLine("x - exit phonebook");
             // TODO
             // nazwa co najmniej 3 litery, a numer ma mieć 9 
@@ -50,6 +51,11 @@
                         phoneBook.DisplayMatchingContacts(searchPhrase);
                         break;
 
+                    case "5":
+                        Console.WriteLine("Insert number to delete ");
+                            var numberToDelete = Console.ReadLine();
+
+                        break;
                     case "x":
                         return;
 
