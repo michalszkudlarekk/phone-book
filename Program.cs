@@ -13,7 +13,6 @@
             Console.WriteLine("5 - Delete contact based on number");
             Console.WriteLine("x - exit phonebook");
             // TODO
-            // nazwa co najmniej 3 litery, a numer ma mieć 9 
             // usuwanie kontaktow bazujac na numerze
             var userInput = Console.ReadLine();
             var phoneBook = new PhoneBook();
@@ -26,11 +25,27 @@
 
                         Console.WriteLine("Insert number");
                         var number = Console.ReadLine();
-                        Console.WriteLine("Insert name");
-                        var fullName = Console.ReadLine();
+                        if (number.Length != 9)
+                        {
+                            Console.WriteLine("Chosen number is either too short or too long, try again");
+                            break;
+                        }
+                        else
 
-                        var newContact = new Contact(fullName, number);
-                        phoneBook.AddContact(newContact);
+                            Console.WriteLine("Insert name");
+                        var fullName = Console.ReadLine();
+                        if (fullName.Length >= 3)
+                        {
+                            var newContact = new Contact(fullName, number);
+                            phoneBook.AddContact(newContact);
+                        }
+                        else
+                        {
+                            {
+                                Console.WriteLine("Chosen name is too short, name has be at least 3 letters");
+                                break;
+                            }
+                        }
                         break;
 
                     case "2":
@@ -53,9 +68,10 @@
 
                     case "5":
                         Console.WriteLine("Insert number to delete ");
-                            var numberToDelete = Console.ReadLine();
-
+                        var numberToDelete = Console.ReadLine();
+                        phoneBook.AddContact(numberToDelete);
                         break;
+
                     case "x":
                         return;
 

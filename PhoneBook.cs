@@ -9,6 +9,12 @@
             Contacts.Add(contact);
         }
 
+
+        public void DeleteContact(Contact contact)
+        {
+            Contacts.Remove(contact);
+        }
+
         private void DisplayContactDetails(Contact contact)
         {
             Console.WriteLine($"Contact : {contact.FullName}, {contact.Number}");
