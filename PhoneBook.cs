@@ -9,10 +9,9 @@
             Contacts.Add(contact);
         }
 
-
-        public void DeleteContact(Contact contact)
-        {
-            Contacts.Remove(contact);
+        public void RemoveContact(Contact contact)
+        { 
+            Contacts.Remove(contact); 
         }
 
         private void DisplayContactDetails(Contact contact)
@@ -48,6 +47,11 @@
         {
             var matchingContacts = Contacts.Where(c => c.FullName.Contains(searchPhrase)).ToList();
             DisplayContactsDetails(matchingContacts);
+        }
+
+        public void RemoveNumber(string numberToDelete)
+        {
+            var toDelete = Contacts.FirstOrDefault(c => c.Number.Contains(numberToDelete));
         }
     }
 }

@@ -6,7 +6,7 @@
         {
             Console.WriteLine("Hello from the other sideeeee");
 
-            Console.WriteLine("1 - add contact");
+            Console.WriteLine("1 - add contact ");
             Console.WriteLine("2 - display contact by number");
             Console.WriteLine("3 - display all contacts");
             Console.WriteLine("4 - search contact by phrase");
@@ -22,9 +22,9 @@
                 switch (userInput)
                 {
                     case "1":
-
-                        Console.WriteLine("Insert number");
+                        Console.WriteLine("Insert number ( Is has to have 9 digits)");
                         var number = Console.ReadLine();
+
                         if (number.Length != 9)
                         {
                             Console.WriteLine("Chosen number is either too short or too long, try again");
@@ -32,7 +32,7 @@
                         }
                         else
 
-                            Console.WriteLine("Insert name");
+                            Console.WriteLine("Insert name (Cannot be shorter than 3 letters)");
                         var fullName = Console.ReadLine();
                         if (fullName.Length >= 3)
                         {
@@ -67,9 +67,10 @@
                         break;
 
                     case "5":
-                        Console.WriteLine("Insert number to delete ");
+                        Console.WriteLine("Insert a number to delete");
                         var numberToDelete = Console.ReadLine();
-                        phoneBook.AddContact(numberToDelete);
+                        phoneBook.RemoveNumber(numberToDelete);
+
                         break;
 
                     case "x":
