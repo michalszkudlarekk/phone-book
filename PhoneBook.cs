@@ -52,6 +52,8 @@
         public void RemoveNumber(string numberToDelete)
         {
             var toDelete = Contacts.FirstOrDefault(c => c.Number.Contains(numberToDelete));
+            RemoveContact(toDelete);
+            Console.WriteLine("Number has been deleted");
         }
     }
 }
